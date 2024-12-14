@@ -1,21 +1,18 @@
 {
-    "name": "ad blocker",
+    "name": "reddit ad blocker",
     "version": "1.0",
-    "manifest_version": 2,
-    "description": "This extension will block all ads",
+    "manifest_version": 3,
+    "description": "This extension will block all ads on reddit",
+    "action": {
+        "default_popup": "popup.html"
+        },
     "permissions":[
         "activeTab",
-        "webRequest",
-        "webRequestBlocking",
-        "<all_urls>"
+        "scripting"
     ],
-    "background": {
-        "scripts": ["background.js"]
-    },
-    "default_popup": "popup.html",
     "content_scripts": [
         {
-            "matches": ["<all_urls>"],
+            "matches": ["https://*.reddit.com/*", "*://*.reddit.com/*"],
             "js": ["background.js"]
         }
     ]
