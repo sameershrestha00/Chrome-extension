@@ -2,7 +2,9 @@
     "name": "ad blocker",
     "version": "1.0",
     "manifest_version": 2,
+    "description": "This extension will block all ads",
     "permissions":[
+        "activeTab",
         "webRequest",
         "webRequestBlocking",
         "<all_urls>"
@@ -10,6 +12,7 @@
     "background": {
         "scripts": ["background.js"]
     },
+    "default_popup": "popup.html",
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
