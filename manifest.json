@@ -1,0 +1,19 @@
+{
+    "name": "ad blocker",
+    "version": "1.0",
+    "manifest_version": 2,
+    "permissions":[
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>"
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ]
+}
